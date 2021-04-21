@@ -13,8 +13,8 @@ def index(request):
     blocks2 = list(Block_2.objects.values())
     blocks3 = list(Block_3.objects.values())
     blocks = blocks1 + blocks2 + blocks3
-    sort = get_object_or_404(Sorting, id = 1).sort_field
-    serted_blocks = sorted(blocks, key=lambda k: k[sort]) 
+    sort = get_object_or_404(Sorting, id=1).sort_field
+    serted_blocks = sorted(blocks, key=lambda k: k[sort])
     print(sort)
     return render(
          request,
