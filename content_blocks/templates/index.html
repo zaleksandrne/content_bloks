@@ -1,13 +1,8 @@
 {% extends "base.html" %}
-
 {% block content %}
-{% for block1 in blocks1 %}
-{% include "block1.html" %}
+
+{% for block in blocks %}
+{% include block.template %}
 {% endfor %}
-{% for block2 in blocks2 %}
-{% include "block2.html"  %}
-{% endfor %}
-{% for block3 in blocks3 %}
-{% include "block3.html"  %}
-{% endfor %}
+
 {% endblock %}
