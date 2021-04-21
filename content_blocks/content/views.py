@@ -15,7 +15,6 @@ def index(request):
     blocks = blocks1 + blocks2 + blocks3
     sort = get_object_or_404(Sorting, id=1).sort_field
     serted_blocks = sorted(blocks, key=lambda k: k[sort])
-    print(sort)
     return render(
          request,
          'index.html',
