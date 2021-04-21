@@ -27,7 +27,7 @@ class Sorting(models.Model):
                                   choices=CHOICES,
                                   default='created'
                                   )
-    
+
     def __str__(self):
         return self.sort_field
 
