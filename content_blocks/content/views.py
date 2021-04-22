@@ -13,15 +13,15 @@ def index(request):
     blocks2 = list(Block_2.objects.values())
     blocks3 = list(Block_3.objects.values())
     blocks = blocks1 + blocks2 + blocks3
-    sort = get_object_or_404(Sorting, id=1).sort_field
+    try:
+        sort = Sorting.objects.first().sort_field 
+    except:
+        sort = 'created'
     sorted_blocks = sorted(blocks, key=lambda k: k[sort])
     return render(
          request,
          'index.html',
          {"users_count": users_count,
-          "blocks1": blocks1,
-          "blocks2": blocks2,
-          "blocks3": blocks3,
           'blocks': sorted_blocks})
 
 
